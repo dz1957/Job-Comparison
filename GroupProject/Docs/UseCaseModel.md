@@ -4,7 +4,7 @@
 
 ## 1 Use Case Diagram
 
-![](use_case_diagram.pdf)
+![](use_case_diagram.png)
 
 ## 2 Use Case Descriptions
 ### Use Case 1: Enter Current Job
