@@ -44,16 +44,16 @@
 ![](Deployment.png)
 ## 3 Low-Level Design
 
-*Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
+Job Management serves as the Main Menu class for the program. It contains the currentJobs and jobOffers maps. CurrentJobs and JobOffers are children of the Job class, this allows them to inherit the necessary methods and variables for the program to function. The Main Activity part of the UI will call the Job Management functions as necessary to create and update the jobs it is storing. Job Comparison activity will look at the Job Management class and the Job Comparison class to get the Jobs to compare and the necessary functions to run the comparison. And Weight configuration activity will update the weight config values and have the functions available to compute job scores. All of this will be stored in a SQLite Database that is held outside of the Application since we won't be modifying SQLite. 
 
 ### 3.1 Class Diagram
 
-*In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
+![](ClassDesign.png)
 
 ### 3.2 Other Diagrams
 
-*<u>Optionally</u>, you can decide to describe some dynamic aspects of your system using one or more behavioral diagrams, such as sequence and state diagrams.*
+![](GUIStateDiagram.png)
 
 ## 4 User Interface Design
-*For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
 
+![](GUIDesign.png)
