@@ -16,12 +16,12 @@ The app is started. The user is presented with the main menu.
 Be able to either save the job details or cancel and exit without saving, returning in both cases to the main menu.
 #### Scenarios:
 Normal Scenario:
-User selects "Enter Current Job" from the main memu.
+User selects "Current Job" from the main memu.
 User enters details such as job title, company, and etc.
 User confirms and saves the information.
 User returns to the main menu.
 Alternate Scenario (Cancel):
-User selects "Enter Current Job" from the main memu.
+User selects "Current Job" from the main memu.
 User enters details such as job title, company, and etc.
 User cancels the operation.
 User returns to the main menu.
@@ -35,12 +35,12 @@ The app is started. The user is presented with the main menu. The user has enter
 The updated information about the current job is successfully stored in the system.
 #### Scenarios:
 Normal Scenario:
-User selects "Edit Current Job" from the main memu.
+User selects "Current Job" from the main memu.
 User edits details such as job title, company, and etc.
 User confirms and saves the information.
 User returns to the main menu.
 Alternate Scenario (Cancel):
-User selects "Edit Current Job" from the main memu.
+User selects "Current Job" from the main memu.
 User edits details such as job title, company, and etc.
 User cancels the operation.
 User returns to the main menu.
