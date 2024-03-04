@@ -17,6 +17,6 @@ public interface CurrentJobDao {
     @Delete
     void delete(CurrentJob currentJob);
 
-    @Query("SELECT * FROM CURRENT_JOB LIMIT 1")
+    @Query("SELECT * FROM currentjob LIMIT 1")
     CurrentJob getCurrentJob();
 }
