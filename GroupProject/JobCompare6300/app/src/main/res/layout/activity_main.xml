@@ -4,47 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#96BC92"
+    tools:context=".MainActivity" >
 
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
-        />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Compare"
+            android:textAlignment="center"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/addJobButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:text="TestAdd"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
 
-    <Button
-        android:id="@+id/deleteJobButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:text="TestDelete"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="154dp"
-        android:layout_height="84dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="210dp" />
+            <Button
+                android:id="@+id/menu_current_job"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#142165"
+                android:fontFamily="sans-serif"
+                android:text="Current Job Details"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/menu_add_offer"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#142165"
+                android:fontFamily="sans-serif"
+                android:text="Add Job Offer"
+                android:textSize="24sp"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/menu_comparison_weights"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#142165"
+                android:fontFamily="sans-serif"
+                android:text="Edit Comparison Weights"
+                android:textSize="24sp"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/menu_compare_jobs"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#142165"
+                android:fontFamily="sans-serif"
+                android:text="Compare Jobs"
+                android:textSize="24sp"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/menu_clear_data"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#950303"
+                android:fontFamily="sans-serif"
+                android:text="Clear All Data"
+                android:textSize="24sp"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
