@@ -72,7 +72,6 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/weight_bonus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Yearly Salary"
@@ -95,7 +94,6 @@
                         android:layout_height="10dp" />
 
                     <TextView
-                        android:id="@+id/weight_bonus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Yearly Bonus"
@@ -104,7 +102,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/weight_salary2"
+                        android:id="@+id/weight_bonus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:background="#F8F7F7"
@@ -221,6 +219,7 @@
                                 android:layout_width="170dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#E61313"
+                                android:onClick="cancelButton"
                                 android:text="Cancel"
                                 android:textSize="24sp" />
 
@@ -237,6 +236,7 @@
                                 android:layout_width="170dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#328514"
+                                android:onClick="okWeights"
                                 android:text="OK"
                                 android:textSize="24sp" />
                         </LinearLayout>

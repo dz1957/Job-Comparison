@@ -332,6 +332,7 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#E61313"
+                            android:onClick="cancelButton"
                             android:text="Cancel"
                             android:textSize="24sp" />
                     </LinearLayout>
@@ -347,6 +348,7 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#328514"
+                            android:onClick="okJobOffer"
                             android:text="OK"
                             android:textSize="24sp" />
                     </LinearLayout>

@@ -96,7 +96,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_salary"
+                            android:id="@+id/current_city"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -332,6 +332,7 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#E61313"
+                            android:onClick="cancelButton"
                             android:text="Cancel"
                             android:textSize="24sp" />
                     </LinearLayout>
@@ -347,6 +348,7 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#328514"
+                            android:onClick="okCurrentJob"
                             android:text="OK"
                             android:textSize="24sp" />
                     </LinearLayout>

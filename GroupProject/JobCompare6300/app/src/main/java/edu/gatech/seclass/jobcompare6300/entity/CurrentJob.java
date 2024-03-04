@@ -4,7 +4,7 @@ import androidx.room.*;
 @Entity
 public class CurrentJob {
 
-    public CurrentJob(int id, String title, String company, String city, String state, int costOfLivingIndex, float yearlySalary, float yearlyBonus, int numberOfStock, float homeBuyingFund, int personalChoiceHolidays, float monthlyInternetStipend) {
+    public CurrentJob(Integer id, String title, String company, String city, String state, int costOfLivingIndex, float yearlySalary, float yearlyBonus, int numberOfStock, float homeBuyingFund, int personalChoiceHolidays, float monthlyInternetStipend) {
         this.id = id;
         this.title = title;
         this.company = company;
@@ -19,7 +19,7 @@ public class CurrentJob {
         this.monthlyInternetStipend = monthlyInternetStipend;
     }
     @PrimaryKey
-    public int id;
+    public Integer id;
 
     public String title;
 
