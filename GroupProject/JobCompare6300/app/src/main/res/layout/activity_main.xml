@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#142165"
                 android:fontFamily="sans-serif"
+                android:onClick="currentJobButton"
                 android:text="Current Job Details"
                 android:textSize="24sp" />
 
@@ -56,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#142165"
                 android:fontFamily="sans-serif"
+                android:onClick="jobOfferButton"
                 android:text="Add Job Offer"
                 android:textSize="24sp"
                 android:typeface="normal" />
@@ -70,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#142165"
                 android:fontFamily="sans-serif"
+                android:onClick="editWeights"
                 android:text="Edit Comparison Weights"
                 android:textSize="24sp"
                 android:typeface="normal" />
@@ -84,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#142165"
                 android:fontFamily="sans-serif"
+                android:onClick="compareJobs"
                 android:text="Compare Jobs"
                 android:textSize="24sp"
                 android:typeface="normal" />
