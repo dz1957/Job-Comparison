@@ -3,6 +3,21 @@ package edu.gatech.seclass.jobcompare6300.entity;
 import androidx.room.*;
 @Entity
 public class CurrentJob {
+
+    public CurrentJob(int id, String title, String company, String city, String state, int costOfLivingIndex, float yearlySalary, float yearlyBonus, int numberOfStock, float homeBuyingFund, int personalChoiceHolidays, float monthlyInternetStipend) {
+        this.id = id;
+        this.title = title;
+        this.company = company;
+        this.city = city;
+        this.state = state;
+        this.costOfLivingIndex = costOfLivingIndex;
+        this.yearlySalary = yearlySalary;
+        this.yearlyBonus = yearlyBonus;
+        this.numberOfStock = numberOfStock;
+        this.homeBuyingFund = homeBuyingFund;
+        this.personalChoiceHolidays = personalChoiceHolidays;
+        this.monthlyInternetStipend = monthlyInternetStipend;
+    }
     @PrimaryKey
     public int id;
 

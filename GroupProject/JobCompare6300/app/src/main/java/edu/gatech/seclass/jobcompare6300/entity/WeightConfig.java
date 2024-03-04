@@ -4,6 +4,16 @@ import androidx.room.*;
 
 @Entity
 public class WeightConfig {
+
+    public WeightConfig(int id, int yearlySalaryWeight, int yearlyBonusWeight, int numberOfStockWeight, int homeBuyingFundWeight, int personalChoiceHolidaysWeight, int monthlyInternetStipendWeight) {
+        this.id = id;
+        this.yearlySalaryWeight = yearlySalaryWeight;
+        this.yearlyBonusWeight = yearlyBonusWeight;
+        this.numberOfStockWeight = numberOfStockWeight;
+        this.homeBuyingFundWeight = homeBuyingFundWeight;
+        this.personalChoiceHolidaysWeight = personalChoiceHolidaysWeight;
+        this.monthlyInternetStipendWeight = monthlyInternetStipendWeight;
+    }
     @PrimaryKey
     public int id;
 

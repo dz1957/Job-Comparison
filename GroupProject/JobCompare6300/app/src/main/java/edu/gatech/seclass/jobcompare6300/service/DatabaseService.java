@@ -13,7 +13,7 @@ import androidx.room.*;
 import java.util.List;
 
 public class DatabaseService {
-    AppDatabase db = Room.databaseBuilder(getApplicationContext(), Application.class, "").build();
+    AppDatabase db = Room.databaseBuilder(getApplicationContext(), Application.class, "app_db").build();
 
     private CurrentJobDao currentJobDao = db.currentJobDao();
     private JobOfferDao jobOfferDao = db.jobOfferDao();
