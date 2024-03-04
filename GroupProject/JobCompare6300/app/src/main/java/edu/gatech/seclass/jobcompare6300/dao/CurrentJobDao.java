@@ -1,3 +1,5 @@
+package edu.gatech.seclass.jobcompare6300.dao;
+import room;
 @Dao
 public interface CurrentJobDao {
     @Insert

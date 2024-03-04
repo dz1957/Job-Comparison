@@ -1,3 +1,5 @@
+package edu.gatech.seclass.jobcompare6300.dao;
+
 @Dao
 public interface JobOfferDao {
     @Insert
