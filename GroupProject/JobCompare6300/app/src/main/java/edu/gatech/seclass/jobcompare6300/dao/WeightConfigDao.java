@@ -17,6 +17,6 @@ public interface WeightConfigDao {
     @Delete
     void delete(WeightConfig weightConfig);
 
-    @Query("SELECT * FROM WEIGHT_CONFIG LIMIT 1")
+    @Query("SELECT * FROM weightconfig LIMIT 1")
     WeightConfig get();
 }
