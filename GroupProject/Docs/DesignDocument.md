@@ -44,7 +44,7 @@
 ![](Deployment.png)
 ## 3 Low-Level Design
 
-Job Management serves as the Main Menu class for the program. It contains the currentJobs and jobOffers maps. CurrentJobs and JobOffers are children of the Job class, this allows them to inherit the necessary methods and variables for the program to function. The Main Activity part of the UI will call the Job Management functions as necessary to create and update the jobs it is storing. Job Comparison activity will look at the Job Management class and the Job Comparison class to get the Jobs to compare and the necessary functions to run the comparison. And Weight configuration activity will update the weight config values and have the functions available to compute job scores. All of this will be stored in a SQLite Database that is held outside of the Application since we won't be modifying SQLite. 
+Job Management serves as the Main Menu class for the program. It contains the currentJobs and jobOffers maps. CurrentJobs and JobOffers are children of the Job class, this allows them to inherit the necessary methods and variables for the program to function. The Main Activity part of the UI will call the Job Management functions as necessary to create and update the jobs it is storing. Job Comparison activity will look at the Job Management class and the Job Comparison class to get the Jobs to compare and the necessary functions to run the comparison. And Weight configuration activity will update the weight config values and have the functions available to compute job scores. All of this will be stored in a SQLite Database that is held outside of the Application by using Room.
 
 ### 3.1 Class Diagram
 
