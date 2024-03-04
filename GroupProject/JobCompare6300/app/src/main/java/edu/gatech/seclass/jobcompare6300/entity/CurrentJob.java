@@ -1,3 +1,6 @@
+package edu.gatech.seclass.jobcompare6300.entity;
+
+import androidx.room.*;
 @Entity
 public class CurrentJob {
     @PrimaryKey
@@ -31,6 +34,4 @@ public class CurrentJob {
 
     @ColumnInfo(name = "monthly_internet_stipend")
     public float monthlyInternetStipend;
-
-
 }

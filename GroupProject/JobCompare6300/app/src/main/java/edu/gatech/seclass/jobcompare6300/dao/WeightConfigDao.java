@@ -1,5 +1,11 @@
 package edu.gatech.seclass.jobcompare6300.dao;
 
+import androidx.room.*;
+
+import java.util.List;
+
+import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
+
 @Dao
 public interface WeightConfigDao {
     @Insert
@@ -11,6 +17,6 @@ public interface WeightConfigDao {
     @Delete
     void delete(WeightConfig weightConfig);
 
-    @Query("SELECT * FROM WEIGHT_CONFIG")
-    List<WeightConfig> getAll();
+    @Query("SELECT * FROM WEIGHT_CONFIG LIMIT 1")
+    WeightConfig get();
 }

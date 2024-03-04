@@ -1,5 +1,11 @@
 package edu.gatech.seclass.jobcompare6300.dao;
-import room;
+
+import androidx.room.*;
+
+import java.util.List;
+
+import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
+
 @Dao
 public interface CurrentJobDao {
     @Insert
@@ -11,6 +17,6 @@ public interface CurrentJobDao {
     @Delete
     void delete(CurrentJob currentJob);
 
-    @Query("SELECT * FROM CURRENT_JOB")
-    List<CurrentJob> getCurrentJob();
+    @Query("SELECT * FROM CURRENT_JOB LIMIT 1")
+    CurrentJob getCurrentJob();
 }

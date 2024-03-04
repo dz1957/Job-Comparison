@@ -1,3 +1,7 @@
+package edu.gatech.seclass.jobcompare6300.entity;
+
+import androidx.room.*;
+
 @Entity
 public class WeightConfig {
     @PrimaryKey
