@@ -114,13 +114,13 @@ public class MainActivity extends AppCompatActivity {
             current_company.setText(currentJob.company);
             current_city.setText(currentJob.city);
             current_state.setText(currentJob.state);
-            current_COLInd.setText(currentJob.costOfLivingIndex);
-            current_salary.setText((int) currentJob.yearlySalary);
-            current_bonus.setText((int) currentJob.yearlyBonus);
-            current_stocks.setText(currentJob.numberOfStock);
-            current_homefund.setText((int) currentJob.homeBuyingFund);
-            current_holidays.setText(currentJob.personalChoiceHolidays);
-            current_internetstipend.setText((int) currentJob.monthlyInternetStipend);
+            current_COLInd.setText(String.valueOf(currentJob.costOfLivingIndex));
+            current_salary.setText(String.valueOf(currentJob.yearlySalary));
+            current_bonus.setText(String.valueOf(currentJob.yearlyBonus));
+            current_stocks.setText(String.valueOf(currentJob.numberOfStock));
+            current_homefund.setText(String.valueOf(currentJob.homeBuyingFund));
+            current_holidays.setText(String.valueOf(currentJob.personalChoiceHolidays));
+            current_internetstipend.setText(String.valueOf(currentJob.monthlyInternetStipend));
         }
     }
     public void okCurrentJob(View view) {
@@ -183,12 +183,12 @@ public class MainActivity extends AppCompatActivity {
         weight_homefund = findViewById(R.id.weight_homefund);
         weight_holidays = findViewById(R.id.weight_holidays);
         weight_internetstipend = findViewById(R.id.weight_internetstipend);
-        weight_salary.setText(weightConfig.yearlySalaryWeight);
-        weight_bonus.setText(weightConfig.yearlyBonusWeight);
-        weight_stocks.setText(weightConfig.numberOfStockWeight);
-        weight_homefund.setText(weightConfig.homeBuyingFundWeight);
-        weight_holidays.setText(weightConfig.personalChoiceHolidaysWeight);
-        weight_internetstipend.setText(weightConfig.monthlyInternetStipendWeight);
+        weight_salary.setText(String.valueOf(weightConfig.yearlySalaryWeight));
+        weight_bonus.setText(String.valueOf(weightConfig.yearlyBonusWeight));
+        weight_stocks.setText(String.valueOf(weightConfig.numberOfStockWeight));
+        weight_homefund.setText(String.valueOf(weightConfig.homeBuyingFundWeight));
+        weight_holidays.setText(String.valueOf(weightConfig.personalChoiceHolidaysWeight));
+        weight_internetstipend.setText(String.valueOf(weightConfig.monthlyInternetStipendWeight));
     }
     public void okWeights(View view) {
         weightConfig.yearlySalaryWeight = Integer.parseInt(offer_salary.getText().toString());
