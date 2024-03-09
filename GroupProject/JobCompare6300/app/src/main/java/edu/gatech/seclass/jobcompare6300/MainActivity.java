@@ -1,6 +1,7 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
@@ -63,11 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
         appDatabase =Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "app_db")
                 .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
                 .build();
         currentJobDao = appDatabase.getCurrentJobDao();
-
         textView = findViewById(R.id.textView);
         updateView();
+
 
         //addJobButton = findViewById(R.id.addJobButton);
         //addJobButton.setOnClickListener(new View.OnClickListener(){

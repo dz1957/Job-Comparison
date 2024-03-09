@@ -1,5 +1,6 @@
 package edu.gatech.seclass.jobcompare6300.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.*;
 
 import java.util.List;
