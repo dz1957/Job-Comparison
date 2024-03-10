@@ -9,20 +9,27 @@ import java.util.concurrent.ExecutionException;
 
 import edu.gatech.seclass.jobcompare6300.R;
 import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.CurrentJobRepository;
 import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
-import edu.gatech.seclass.jobcompare6300.model.CurrentJobData;
+
 
 public class CurrentJobActivity extends AbstractJobActivity {
 
-    private CurrentJobData currentJob;
-
+    private CurrentJob currentJob;
+    private CurrentJobRepository currentJobRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_job);
 
-        initializeAndLoadWidgets();
+        //TODO: Convert to view model.
+        currentJobRepository = new CurrentJobRepository(this.getApplication());
+        currentJobRepository.getCurrentJob().observe(this, job -> {
+            currentJob = job;
+            initializeAndLoadWidgets();
+        });
+
     }
 
     @Override
@@ -39,12 +46,7 @@ public class CurrentJobActivity extends AbstractJobActivity {
         if (isValidInternetStipend && isValidPersonalHoliday && isValidHomeBuyingFund) {
             //Store in database
             getCurrentJobFromWidgets();
-            if (currentJob.getId() == null) {
-
-            } else {
-
-            }
-
+            currentJobRepository.insertCurrentJob(currentJob);
             navigateToMainActivity();
         }
 
@@ -63,7 +65,7 @@ public class CurrentJobActivity extends AbstractJobActivity {
     private void getCurrentJobFromWidgets() {
 
         if (currentJob == null) {
-            currentJob = new CurrentJobData();
+            currentJob = new CurrentJob();
         }
 
         getJobFromWidgets(currentJob);

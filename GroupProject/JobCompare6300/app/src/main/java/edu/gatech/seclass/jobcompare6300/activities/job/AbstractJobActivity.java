@@ -11,7 +11,8 @@ import java.util.concurrent.ExecutionException;
 import edu.gatech.seclass.jobcompare6300.InputValidationUtility;
 import edu.gatech.seclass.jobcompare6300.MainActivity;
 import edu.gatech.seclass.jobcompare6300.R;
-import edu.gatech.seclass.jobcompare6300.model.JobData;
+import edu.gatech.seclass.jobcompare6300.entity.Job;
+
 
 public abstract class AbstractJobActivity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
     public void onClickCancel(View view) {
         navigateToMainActivity();
     }
-    protected void getJobFromWidgets(JobData job) {
+    protected void getJobFromWidgets(Job job) {
         job.setTitle(jobTitleWidget.getText().toString());
         job.setCompany(companyWidget.getText().toString());
         job.setCity(cityWidget.getText().toString());
@@ -46,7 +47,7 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
 
     }
 
-    protected void loadWidgetsFromJob(JobData job) {
+    protected void loadWidgetsFromJob(Job job) {
         jobTitleWidget.setText(job.getTitle());
         companyWidget.setText(job.getCompany());
         cityWidget.setText(job.getCity());
