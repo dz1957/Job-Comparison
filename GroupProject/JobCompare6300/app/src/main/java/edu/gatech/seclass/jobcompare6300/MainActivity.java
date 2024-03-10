@@ -1,16 +1,16 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import edu.gatech.seclass.jobcompare6300.activities.job.CurrentJobActivity;
+import edu.gatech.seclass.jobcompare6300.activities.job.JobOfferActivity;
 import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
@@ -89,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
         CurrentJob currentJob= currentJobDao.getCurrentJob().getValue();
         int jobId;
         if (currentJob != null) {
-            jobId = currentJob.id;
+            //jobId = currentJob.id;
+            jobId = 0;
         } else {
             // Handle the case when currentJob is null
             jobId = -1;
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(currentJobActivity);
     }
     public void okCurrentJob(View view) {
+        /*
         currentJob = new CurrentJob(1,
         current_jobtitle.getText().toString(),
         current_company.getText().toString(),
@@ -116,23 +118,17 @@ public class MainActivity extends AppCompatActivity {
         Integer.parseInt(current_internetstipend.getText().toString()));
         //DatabaseService.saveCurrentJob(currentJob);
         setContentView(R.layout.activity_main);
+        */
+
     }
     public void jobOfferButton(View view) {
 
-        setContentView(R.layout.add_job_offer);
-        offer_jobtitle = findViewById(R.id.offer_jobtitle);
-        offer_company = findViewById(R.id.offer_company);
-        offer_city = findViewById(R.id.offer_city);
-        offer_state = findViewById(R.id.offer_state);
-        offer_COLInd = findViewById(R.id.offer_col_index);
-        offer_salary = findViewById(R.id.offer_salary);
-        offer_bonus = findViewById(R.id.offer_bonus);
-        offer_stocks = findViewById(R.id.offer_stocks);
-        offer_homefund = findViewById(R.id.offer_homefund);
-        offer_holidays = findViewById(R.id.offer_holidays);
-        offer_internetstipend = findViewById(R.id.offer_internetstipend);
+        Intent jobOfferActivity = new Intent(MainActivity.this, JobOfferActivity.class);
+        startActivity(jobOfferActivity);
     }
     public void okJobOffer(View view) {
+
+        /*
         jobOffer = new JobOffer(jobOfferId,
         offer_jobtitle.getText().toString(),
         offer_company.getText().toString(),
@@ -148,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
         jobOfferId +=1;
         //DatabaseService.saveJobOffer(jobOffer);
         setContentView(R.layout.activity_main);
+        */
+
     }
 
     public void cancelButton(View view) {
@@ -182,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public float jobOfferScore(JobOffer jobOffer, WeightConfig weightConfig) {
+
+        /*
         int netWeight = weightConfig.yearlySalaryWeight + weightConfig.yearlyBonusWeight + weightConfig.numberOfStockWeight
                 + weightConfig.homeBuyingFundWeight + weightConfig.personalChoiceHolidaysWeight + weightConfig.monthlyInternetStipendWeight;
         float score = weightConfig.yearlySalaryWeight*(jobOffer.yearlySalary/(jobOffer.costOfLivingIndex/100))
@@ -191,6 +191,8 @@ public class MainActivity extends AppCompatActivity {
         + jobOffer.personalChoiceHolidays * weightConfig.yearlySalaryWeight*(jobOffer.yearlySalary/(jobOffer.costOfLivingIndex/100))/260
         + jobOffer.monthlyInternetStipend*12;
         return score/netWeight;
+        */
+         return 0;
     }
 
     //  find and reference widgets with their ids from the layout XML file.
