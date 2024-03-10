@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.app.Application;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,13 +62,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
         appDatabase =Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "app_db")
                 .allowMainThreadQueries()
                 .build();
         currentJobDao = appDatabase.getCurrentJobDao();
-
+        **/
         textView = findViewById(R.id.textView);
-        updateView();
+        //updateView();
 
         //addJobButton = findViewById(R.id.addJobButton);
         //addJobButton.setOnClickListener(new View.OnClickListener(){
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         //);
     }
     void updateView(){
-        CurrentJob currentJob= currentJobDao.getCurrentJob();
+        CurrentJob currentJob= currentJobDao.getCurrentJob().getValue();
         int jobId;
         if (currentJob != null) {
             jobId = currentJob.id;
@@ -96,32 +98,8 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(jobId_String);
     }
     public void currentJobButton(View view) {
-        setContentView(R.layout.current_job_details);
-        current_jobtitle = findViewById(R.id.current_jobtitle);
-        current_company = findViewById(R.id.current_company);
-        current_city = findViewById(R.id.current_city);
-        current_state = findViewById(R.id.current_state);
-        current_COLInd = findViewById(R.id.current_col_index);
-        current_salary = findViewById(R.id.current_salary);
-        current_bonus = findViewById(R.id.current_bonus);
-        current_stocks = findViewById(R.id.current_stocks);
-        current_homefund = findViewById(R.id.current_homefund);
-        current_holidays = findViewById(R.id.current_holidays);
-        current_internetstipend = findViewById(R.id.current_internetstipend);
-        if (currentJob == null) {}
-        else {
-            current_jobtitle.setText(currentJob.title);
-            current_company.setText(currentJob.company);
-            current_city.setText(currentJob.city);
-            current_state.setText(currentJob.state);
-            current_COLInd.setText(String.valueOf(currentJob.costOfLivingIndex));
-            current_salary.setText(String.valueOf(currentJob.yearlySalary));
-            current_bonus.setText(String.valueOf(currentJob.yearlyBonus));
-            current_stocks.setText(String.valueOf(currentJob.numberOfStock));
-            current_homefund.setText(String.valueOf(currentJob.homeBuyingFund));
-            current_holidays.setText(String.valueOf(currentJob.personalChoiceHolidays));
-            current_internetstipend.setText(String.valueOf(currentJob.monthlyInternetStipend));
-        }
+        Intent currentJobActivity = new Intent(MainActivity.this, CurrentJobActivity.class);
+        startActivity(currentJobActivity);
     }
     public void okCurrentJob(View view) {
         currentJob = new CurrentJob(1,
