@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import edu.gatech.seclass.jobcompare6300.activities.CompareJobsActivity;
+import edu.gatech.seclass.jobcompare6300.activities.ComparisonWeightsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.job.CurrentJobActivity;
 import edu.gatech.seclass.jobcompare6300.activities.job.JobOfferActivity;
 import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
@@ -152,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void editWeights(View view) {
-        setContentView(R.layout.comparison_weights);
+        /**setContentView(R.layout.comparison_weights);
         weight_salary = findViewById(R.id.weight_salary);
         weight_bonus = findViewById(R.id.weight_bonus);
         weight_stocks = findViewById(R.id.weight_stocks);
@@ -165,6 +167,9 @@ public class MainActivity extends AppCompatActivity {
         weight_homefund.setText(String.valueOf(weightConfig.homeBuyingFundWeight));
         weight_holidays.setText(String.valueOf(weightConfig.personalChoiceHolidaysWeight));
         weight_internetstipend.setText(String.valueOf(weightConfig.monthlyInternetStipendWeight));
+         **/
+        Intent comparisonWeightsActivity = new Intent(MainActivity.this, ComparisonWeightsActivity.class);
+        startActivity(comparisonWeightsActivity);
     }
     public void okWeights(View view) {
         weightConfig.yearlySalaryWeight = Integer.parseInt(offer_salary.getText().toString());
@@ -176,7 +181,10 @@ public class MainActivity extends AppCompatActivity {
         //DatabaseService.saveWeightConfig(weightConfig);
     }
     public void compareJobs(View view) {
-        setContentView(R.layout.compare_jobs);
+        //setContentView(R.layout.compare_jobs);
+
+        Intent compareJobsActivity = new Intent(MainActivity.this, CompareJobsActivity.class);
+        startActivity(compareJobsActivity);
     }
 
     public float jobOfferScore(JobOffer jobOffer, WeightConfig weightConfig) {
