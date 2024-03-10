@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#96BC92"
-    tools:context=".MainActivity">
-
+    tools:context=".activities.job.CurrentJobActivity">
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
@@ -39,7 +38,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/offer_jobtitle"
+                    android:id="@+id/current_jobtitle"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -62,7 +61,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/offer_company"
+                    android:id="@+id/current_company"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -96,7 +95,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_city"
+                            android:id="@+id/current_city"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -123,7 +122,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_state"
+                            android:id="@+id/current_state"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -148,7 +147,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/offer_col_index"
+                    android:id="@+id/current_col_index"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -182,7 +181,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_salary"
+                            android:id="@+id/current_salary"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -205,7 +204,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_stocks"
+                            android:id="@+id/current_stocks"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -228,7 +227,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_holidays"
+                            android:id="@+id/current_holidays"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -255,7 +254,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_bonus"
+                            android:id="@+id/current_bonus"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -278,7 +277,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_homefund"
+                            android:id="@+id/current_homefund"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -301,7 +300,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/offer_internetstipend"
+                            android:id="@+id/current_internetstipend"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -328,7 +327,7 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/offer_cancel"
+                            android:id="@+id/current_cancel"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#E61313"
@@ -344,7 +343,7 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/offer_ok"
+                            android:id="@+id/current_ok"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#328514"

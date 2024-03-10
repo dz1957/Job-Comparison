@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ComparisonScreenActivity"
+    android:background="#96BC92">
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Title"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary2"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary3"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary4"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary5"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary7"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary6"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adjusted Salary"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary8"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary9"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adjusted Bonus"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary11"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary10"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stock Shares"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary12"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary13"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home Buying Fund"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary15"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary14"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Holidays"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary16"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary17"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Internet Stipend"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary19"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_salary18"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F7F7"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/compare_return2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#081485"
+                android:onClick="onClickReturn"
+                android:text="Return"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
