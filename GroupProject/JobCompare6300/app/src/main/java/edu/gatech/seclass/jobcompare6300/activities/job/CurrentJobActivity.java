@@ -25,17 +25,17 @@ public class CurrentJobActivity extends AbstractJobActivity {
 
         //TODO: Convert to view model.
         currentJobRepository = new CurrentJobRepository(this.getApplication());
-        currentJobRepository.getCurrentJob().observe(this, job -> {
-            currentJob = job;
-            initializeAndLoadWidgets();
-        });
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        loadCurrentJob();
+        currentJobRepository.getCurrentJob().observe(this, job -> {
+            currentJob = job;
+            Log.i(this.getClass().getName(), "Current job loaded from database: " + currentJob.toString());
+            initializeAndLoadWidgets();
+            loadWidgetsFromJob(currentJob);
+        });
     }
 
     public void onClickOk(View view) throws ExecutionException, InterruptedException {
@@ -51,17 +51,6 @@ public class CurrentJobActivity extends AbstractJobActivity {
         }
 
     }
-
-    private void loadCurrentJob() {
-
-
-        if (currentJob == null) {
-            return;
-        }
-
-        loadWidgetsFromJob(currentJob);
-    }
-
     private void getCurrentJobFromWidgets() {
 
         if (currentJob == null) {

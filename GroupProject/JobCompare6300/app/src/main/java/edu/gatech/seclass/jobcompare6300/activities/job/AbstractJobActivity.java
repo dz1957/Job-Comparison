@@ -52,12 +52,12 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
         companyWidget.setText(job.getCompany());
         cityWidget.setText(job.getCity());
         stateWidget.setText(job.getState());
-        costOfLivingWidget.setText(job.getCostOfLivingIndex());
+        costOfLivingWidget.setText(Integer.toString(job.getCostOfLivingIndex()));
         salaryWidget.setText(Float.toString(job.getYearlySalary()));
         bonusWidget.setText(Float.toString(job.getYearlyBonus()));
-        numberOfStocksWidget.setText(job.getNumberOfStock());
+        numberOfStocksWidget.setText(Integer.toString(job.getNumberOfStock()));
         homeBuyingFundWidget.setText(Float.toString(job.getHomeBuyingFund()));
-        personalHolidaysWidget.setText(job.getPersonalChoiceHolidays());
+        personalHolidaysWidget.setText(Integer.toString(job.getPersonalChoiceHolidays()));
         internetStipendWidget.setText(Float.toString(job.getMonthlyInternetStipend()));
     }
 
