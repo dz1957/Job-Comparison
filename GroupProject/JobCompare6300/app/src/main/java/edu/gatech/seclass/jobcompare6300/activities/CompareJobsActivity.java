@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,16 +28,14 @@ import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 
 public class CompareJobsActivity extends AppCompatActivity {
-
     private ArrayList<TextView> numTextArray = new ArrayList<>();
     private ArrayList<TextView> titleCompanyTextArray = new ArrayList<>();
     private ArrayList<CheckBox> checkboxArray = new ArrayList<>();
     private ArrayList<Job> jobArray = new ArrayList<>();
-    public static Job job1;
-    public static Job job2;
+    static Job job1;
+    static Job job2;
     private boolean compareValid = false;
     private Button Compare;
-
 
     AppDatabase appDatabase;
 
@@ -95,14 +94,20 @@ public class CompareJobsActivity extends AppCompatActivity {
                     jobArray.sort((j1, j2) -> (int) (j1.getJobOfferScore(weightConfig) - j2.getJobOfferScore(weightConfig)));
                     Collections.reverse(jobArray);
 
-                    for(int i = 0; i < jobArray.size(); i++) {
-                        String text = jobArray.get(i).getTitle() + ", " + jobArray.get(i).getCompany();
+                    for(int i = 0; i < 10; i++) {
+                        if (i < jobArray.size()) {
+                            String text = jobArray.get(i).getTitle() + ", " + jobArray.get(i).getCompany();
 
-                        if (jobArray.get(i) == currentJob) {
-                            text += " (Current)";
+                            if (jobArray.get(i) == currentJob) {
+                                text += " (Current)";
+                            }
+
+                            titleCompanyTextArray.get(i).setText(text);
+                        } else {
+                            numTextArray.get(i).setEnabled(false);
+                            titleCompanyTextArray.get(i).setEnabled(false);
+                            checkboxArray.get(i).setEnabled(false);
                         }
-
-                        titleCompanyTextArray.get(i).setText(text);
                     }
                 });
             });
@@ -113,10 +118,11 @@ public class CompareJobsActivity extends AppCompatActivity {
     public void onClickCompare(View view) {
         if (compareValid) {
             boolean first = true;
-            for (int i = 0; i <= 10; i++) {
+            for (int i = 0; i < jobArray.size(); i++) {
                 if (checkboxArray.get(i).isChecked()) {
                     if (first) {
                         job1 = jobArray.get(i);
+                        first = false;
                     } else {
                         job2 = jobArray.get(i);
                     }
