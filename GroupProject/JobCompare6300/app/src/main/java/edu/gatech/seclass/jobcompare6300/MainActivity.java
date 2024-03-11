@@ -5,21 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import edu.gatech.seclass.jobcompare6300.activities.CompareJobsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.ComparisonWeightsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.job.CurrentJobActivity;
 import edu.gatech.seclass.jobcompare6300.activities.job.JobOfferActivity;
-import edu.gatech.seclass.jobcompare6300.database.CurrentJobRepository;
+import edu.gatech.seclass.jobcompare6300.database.JobRepository;
 import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 //import edu.gatech.seclass.jobcompare6300.service.DatabaseService;
-import edu.gatech.seclass.jobcompare6300.dao.CurrentJobDao;
-import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+
 //import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CurrentJobRepository currentJobRepository = new CurrentJobRepository(this.getApplication());
+        JobRepository currentJobRepository = new JobRepository(this.getApplication());
         currentJobRepository.getCurrentJob().observe(this, job -> currentJob = job);
     }
 

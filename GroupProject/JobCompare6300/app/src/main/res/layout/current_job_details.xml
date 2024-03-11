@@ -39,7 +39,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/current_jobtitle"
+                    android:id="@+id/jobtitle"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -62,7 +62,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/current_company"
+                    android:id="@+id/company"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -96,7 +96,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_city"
+                            android:id="@+id/city"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -123,7 +123,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_state"
+                            android:id="@+id/state"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -148,7 +148,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/current_col_index"
+                    android:id="@+id/col_index"
                     android:layout_width="375dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -182,7 +182,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_salary"
+                            android:id="@+id/salary"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -205,7 +205,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_stocks"
+                            android:id="@+id/stocks"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -228,7 +228,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_holidays"
+                            android:id="@+id/holidays"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -255,7 +255,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_bonus"
+                            android:id="@+id/bonus"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -278,7 +278,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_homefund"
+                            android:id="@+id/homefund"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
@@ -301,7 +301,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/current_internetstipend"
+                            android:id="@+id/internetstipend"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:background="#F8F7F7"
