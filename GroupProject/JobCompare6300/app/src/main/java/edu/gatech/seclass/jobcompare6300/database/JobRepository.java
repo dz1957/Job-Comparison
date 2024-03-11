@@ -11,12 +11,22 @@ import edu.gatech.seclass.jobcompare6300.dao.JobOfferDao;
 import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 
-public class JobRepository {
+public final class JobRepository {
 
     private final CurrentJobDao currentJobDao;
     private final JobOfferDao jobOfferDao;
 
-    public JobRepository(Application application) {
+    private static JobRepository instance;
+
+    public static synchronized JobRepository getInstance(Application application) {
+        if (instance == null) {
+            instance = new JobRepository(application);
+        }
+
+        return instance;
+    }
+
+    private JobRepository(Application application) {
         AppDatabase db = AppDatabase.getInstance(application);
         currentJobDao = db.getCurrentJobDao();
         jobOfferDao = db.getJobOfferDao();
@@ -32,6 +42,10 @@ public class JobRepository {
         });
     }
 
+    public LiveData<Integer> getCurrentJobCount() {
+        return currentJobDao.getRowCount();
+    }
+
     public LiveData<List<JobOffer>> getJobOfferList() {
         return jobOfferDao.getAll();
     }
@@ -42,4 +56,7 @@ public class JobRepository {
         });
     }
 
+    public LiveData<Integer> getJobOfferCount() {
+        return jobOfferDao.getRowCount();
+    }
 }
