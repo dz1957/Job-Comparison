@@ -86,4 +86,8 @@ public class WeightConfig {
     public void setStipendWeight(int monthlyInternetStipendWeight) {
         this.monthlyInternetStipendWeight = monthlyInternetStipendWeight;
     }
+
+    public int getTotalWeight(){
+        return this.yearlySalaryWeight + this.yearlyBonusWeight + this.numberOfStockWeight + this.homeBuyingFundWeight + this.personalChoiceHolidaysWeight + this.monthlyInternetStipendWeight;
+    }
 }

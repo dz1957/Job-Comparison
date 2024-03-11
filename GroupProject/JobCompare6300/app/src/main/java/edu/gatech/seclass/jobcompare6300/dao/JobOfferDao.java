@@ -18,6 +18,9 @@ public interface JobOfferDao {
     @Delete
     void delete(JobOffer jobOffer);
 
-    @Query("SELECT * FROM joboffer LIMIT 10")
+    @Query("SELECT * FROM joboffer LIMIT 9")
     LiveData<List<JobOffer>> getAll();
+
+    @Query("SELECT COUNT(id) FROM JobOffer")
+    LiveData<Integer> getRowCount();
 }
