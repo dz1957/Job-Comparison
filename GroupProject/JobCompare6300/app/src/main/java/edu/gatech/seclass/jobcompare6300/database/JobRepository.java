@@ -42,6 +42,12 @@ public final class JobRepository {
         });
     }
 
+    public void updateCurrentJob(CurrentJob currentJob) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            currentJobDao.update(currentJob);
+        });
+    }
+
     public LiveData<Integer> getCurrentJobCount() {
         return currentJobDao.getRowCount();
     }
