@@ -34,7 +34,7 @@ public class JobOfferActivity extends AbstractJobActivity {
             JobOffer job = new JobOffer();
             getJobFromWidgets(job);
             jobRepository.insertJobOffer(job);
-            navigateToMainActivity();
+            navigateToMainActivity(true);
         }
 
     }

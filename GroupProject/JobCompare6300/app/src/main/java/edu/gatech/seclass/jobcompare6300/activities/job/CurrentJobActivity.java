@@ -50,7 +50,7 @@ public class CurrentJobActivity extends AbstractJobActivity {
             //Store in database
             getCurrentJobFromWidgets();
             currentJobRepository.insertCurrentJob(currentJob);
-            navigateToMainActivity();
+            navigateToMainActivity(true);
         }
 
     }

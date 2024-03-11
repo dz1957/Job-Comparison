@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import edu.gatech.seclass.jobcompare6300.activities.CompareJobsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.ComparisonWeightsActivity;
@@ -49,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("job_entry_success") && intent.getBooleanExtra("job_entry_success", false)) {
+            Toast.makeText(this, "Successfully created job entry.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void disableCompareJobsIfNeeded(Integer currentJobCount, Integer jobOfferCount) {
