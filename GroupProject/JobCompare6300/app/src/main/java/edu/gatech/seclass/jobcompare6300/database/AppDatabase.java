@@ -15,7 +15,8 @@ import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 
-@Database(entities = {CurrentJob.class, JobOffer.class, WeightConfig.class}, version = 3)
+@Database(entities = {CurrentJob.class, JobOffer.class, WeightConfig.class}, version = 4)
+
 public abstract class AppDatabase extends RoomDatabase {
     public abstract CurrentJobDao getCurrentJobDao();
     public abstract JobOfferDao getJobOfferDao();
@@ -35,7 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
         return instance;
     }
 
-    static final ExecutorService databaseWriteExecutor =
+    static final public ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
 

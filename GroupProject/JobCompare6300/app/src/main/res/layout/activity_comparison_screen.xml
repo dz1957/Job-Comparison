@@ -34,7 +34,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary2"
+                    android:id="@+id/comp_title1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -51,7 +51,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary3"
+                    android:id="@+id/comp_title2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -83,7 +83,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary4"
+                    android:id="@+id/comp_company1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -100,7 +100,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary5"
+                    android:id="@+id/comp_company2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -132,7 +132,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary7"
+                    android:id="@+id/comp_location1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -149,7 +149,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary6"
+                    android:id="@+id/comp_location2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -181,7 +181,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary8"
+                    android:id="@+id/comp_sal1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -198,7 +198,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary9"
+                    android:id="@+id/comp_sal2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -230,7 +230,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary11"
+                    android:id="@+id/comp_bonus1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -247,7 +247,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary10"
+                    android:id="@+id/comp_bonus2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -279,7 +279,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary12"
+                    android:id="@+id/comp_stock1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -296,7 +296,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary13"
+                    android:id="@+id/comp_stock2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -328,7 +328,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary15"
+                    android:id="@+id/comp_home1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -345,7 +345,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary14"
+                    android:id="@+id/comp_home2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -377,7 +377,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary16"
+                    android:id="@+id/comp_hol1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -394,7 +394,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary17"
+                    android:id="@+id/comp_hol2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -426,7 +426,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary19"
+                    android:id="@+id/comp_int1"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"
@@ -443,7 +443,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/current_salary18"
+                    android:id="@+id/comp_int2"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:background="#F8F7F7"

@@ -3,6 +3,11 @@ package edu.gatech.seclass.jobcompare6300;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.MediatorLiveData;
 import android.util.Log;
+import androidx.lifecycle.LiveData;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 disableCompareJobsIfNeeded(currentJobCount, jobOfferCount);
             });
         });
+
     }
 
     private void disableCompareJobsIfNeeded(Integer currentJobCount, Integer jobOfferCount) {

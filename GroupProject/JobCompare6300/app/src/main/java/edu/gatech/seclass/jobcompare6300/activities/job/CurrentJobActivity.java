@@ -31,7 +31,6 @@ public class CurrentJobActivity extends AbstractJobActivity {
         super.onStart();
         currentJobRepository.getCurrentJob().observe(this, job -> {
             currentJob = job;
-
             initializeAndLoadWidgets();
 
             if (job != null) {
