@@ -1,5 +1,6 @@
 package edu.gatech.seclass.jobcompare6300.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.*;
 
 import java.util.List;
@@ -18,5 +19,5 @@ public interface WeightConfigDao {
     void delete(WeightConfig weightConfig);
 
     @Query("SELECT * FROM weightconfig LIMIT 1")
-    WeightConfig get();
+    LiveData<WeightConfig> get();
 }

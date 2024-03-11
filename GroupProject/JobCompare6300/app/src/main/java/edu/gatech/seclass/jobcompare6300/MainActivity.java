@@ -2,6 +2,11 @@ package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.lifecycle.LiveData;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         JobRepository currentJobRepository = new JobRepository(this.getApplication());
         currentJobRepository.getCurrentJob().observe(this, job -> currentJob = job);
+
     }
 
     public void currentJobButton(View view) {
