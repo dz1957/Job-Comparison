@@ -20,14 +20,18 @@ import edu.gatech.seclass.jobcompare6300.activities.job.AbstractJobActivity;
 import edu.gatech.seclass.jobcompare6300.entity.Job;
 
 public class CompareJobsActivity extends AppCompatActivity {
-    private ArrayList<TextView> numTextArray;
-    private ArrayList<TextView> titleCompanyTextArray;
-    private ArrayList<CheckBox> checkboxArray;
-    private ArrayList<Job> jobArray;
+    private ArrayList<TextView> numTextArray = new ArrayList<TextView>();
+    private ArrayList<TextView> titleCompanyTextArray = new ArrayList<TextView>();
+    private ArrayList<CheckBox> checkboxArray = new ArrayList<CheckBox>();
+    private ArrayList<Job> jobArray = new ArrayList<Job>();
     public static Job job1;
     public static Job job2;
     private boolean compareValid = false;
     private Button Compare;
+
+    public CompareJobsActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
