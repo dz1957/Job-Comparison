@@ -32,7 +32,6 @@ public class JobOfferActivity extends AbstractJobActivity {
 //                JobOffer firstJobOffer = jobOffers.get(0);
 //                jobRepository.deleteJobOffer(firstJobOffer);
 //            } else {
-//                // Handle the case when the list is empty, for example, show a message or log a warning.
 //                Log.i("JobOfferActivity", "JobOffers list is empty");
 //            }
 //
@@ -42,7 +41,6 @@ public class JobOfferActivity extends AbstractJobActivity {
 //                CurrentJob currentJob1 = currentJob;
 //                jobRepository.deleteCurrentJob(currentJob1);
 //            } else {
-//                // Handle the case when the list is empty, for example, show a message or log a warning.
 //                Log.i("CurrentJobActivity", "CurrentJob is null");
 //            }
 //
