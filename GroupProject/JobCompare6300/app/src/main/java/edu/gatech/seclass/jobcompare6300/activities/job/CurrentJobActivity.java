@@ -23,7 +23,7 @@ public class CurrentJobActivity extends AbstractJobActivity {
         setContentView(R.layout.activity_current_job);
 
         //TODO: Convert to view model.
-        currentJobRepository = new JobRepository(this.getApplication());
+        currentJobRepository = JobRepository.getInstance(this.getApplication());
     }
 
     @Override
@@ -49,8 +49,15 @@ public class CurrentJobActivity extends AbstractJobActivity {
         if (isValidInternetStipend && isValidPersonalHoliday && isValidHomeBuyingFund) {
             //Store in database
             getCurrentJobFromWidgets();
-            currentJobRepository.insertCurrentJob(currentJob);
-            navigateToMainActivity();
+            currentJobRepository.getCurrentJobCount().observe(this, count -> {
+                if (count == 0) {
+                    currentJobRepository.insertCurrentJob(currentJob);
+                } else {
+                    currentJobRepository.updateCurrentJob(currentJob);
+                }
+            });
+
+            navigateToMainActivity(true);
         }
 
     }

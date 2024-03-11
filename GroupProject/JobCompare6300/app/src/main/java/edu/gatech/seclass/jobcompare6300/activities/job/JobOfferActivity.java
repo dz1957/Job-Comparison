@@ -25,6 +25,7 @@ public class JobOfferActivity extends AbstractJobActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offer);
         initializeAndLoadWidgets();
+
         jobRepository = new JobRepository(this.getApplication());
 
 //        jobRepository.getJobOfferList().observe(this, jobOffers -> {
@@ -45,6 +46,7 @@ public class JobOfferActivity extends AbstractJobActivity {
 //            }
 //
 //        });
+
     }
 
     public void onClickOk(View view) {
@@ -57,7 +59,7 @@ public class JobOfferActivity extends AbstractJobActivity {
             JobOffer job = new JobOffer();
             getJobFromWidgets(job);
             jobRepository.insertJobOffer(job);
-            navigateToMainActivity();
+            navigateToMainActivity(true);
         }
 
     }
