@@ -16,6 +16,16 @@ public class JobRepository {
     private final CurrentJobDao currentJobDao;
     private final JobOfferDao jobOfferDao;
 
+    private static JobRepository instance;
+
+    public static synchronized JobRepository getInstance(Application application) {
+        if (instance == null) {
+            instance = new JobRepository(application);
+        }
+
+        return instance;
+    }
+
     public JobRepository(Application application) {
         AppDatabase db = AppDatabase.getInstance(application);
         currentJobDao = db.getCurrentJobDao();
