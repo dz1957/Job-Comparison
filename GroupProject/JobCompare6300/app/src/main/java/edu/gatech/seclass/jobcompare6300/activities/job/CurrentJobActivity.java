@@ -23,7 +23,7 @@ public class CurrentJobActivity extends AbstractJobActivity {
         setContentView(R.layout.activity_current_job);
 
         //TODO: Convert to view model.
-        currentJobRepository = new JobRepository(this.getApplication());
+        currentJobRepository = JobRepository.getInstance(this.getApplication());
     }
 
     @Override

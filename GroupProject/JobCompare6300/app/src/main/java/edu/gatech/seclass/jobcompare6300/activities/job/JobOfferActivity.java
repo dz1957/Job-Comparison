@@ -21,7 +21,7 @@ public class JobOfferActivity extends AbstractJobActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offer);
         initializeAndLoadWidgets();
-        jobRepository = new JobRepository(this.getApplication());
+        jobRepository = JobRepository.getInstance(this.getApplication());
     }
 
     public void onClickOk(View view) {

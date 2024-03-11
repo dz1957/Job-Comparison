@@ -1,10 +1,13 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.lifecycle.MediatorLiveData;
+import android.util.Log;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import edu.gatech.seclass.jobcompare6300.activities.CompareJobsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.ComparisonWeightsActivity;
@@ -21,14 +24,30 @@ import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 public class MainActivity extends AppCompatActivity {
 
     private CurrentJob currentJob;
+    protected Button compareJobsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JobRepository currentJobRepository = new JobRepository(this.getApplication());
-        currentJobRepository.getCurrentJob().observe(this, job -> currentJob = job);
+        compareJobsButton = findViewById(R.id.menu_compare_jobs);
+
+        JobRepository jobRepository = JobRepository.getInstance(this.getApplication());
+        var context = this;
+        jobRepository.getCurrentJobCount().observe(context, currentJobCount -> {
+            jobRepository.getJobOfferCount().observe(context, jobOfferCount -> {
+                Log.i(this.getClass().getName(), "Current Job count: " + currentJobCount);
+                Log.i(this.getClass().getName(), "Job Offer count: " + jobOfferCount);
+
+                disableCompareJobsIfNeeded(currentJobCount, jobOfferCount);
+            });
+        });
+    }
+
+    private void disableCompareJobsIfNeeded(Integer currentJobCount, Integer jobOfferCount) {
+        boolean enableButton = jobOfferCount > 1 || jobOfferCount == 1 && currentJobCount >= 1;
+        compareJobsButton.setEnabled(enableButton);
     }
 
     public void currentJobButton(View view) {
