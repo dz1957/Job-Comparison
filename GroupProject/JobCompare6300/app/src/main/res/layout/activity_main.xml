@@ -96,16 +96,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <Button
-                android:id="@+id/menu_clear_data"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#950303"
-                android:fontFamily="sans-serif"
-                android:text="Clear All Data"
-                android:textSize="24sp"
-                android:typeface="normal" />
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
