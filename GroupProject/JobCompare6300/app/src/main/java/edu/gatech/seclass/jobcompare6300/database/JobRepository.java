@@ -32,6 +32,12 @@ public class JobRepository {
         });
     }
 
+    public void deleteCurrentJob(CurrentJob currentJob){
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            currentJobDao.delete(currentJob);
+        });
+    }
+
     public LiveData<List<JobOffer>> getJobOfferList() {
         return jobOfferDao.getAll();
     }
@@ -39,6 +45,11 @@ public class JobRepository {
     public void insertJobOffer(JobOffer jobOffer) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             jobOfferDao.insert(jobOffer);
+        });
+    }
+    public void deleteJobOffer(JobOffer jobOffer){
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            jobOfferDao.delete(jobOffer);
         });
     }
 
