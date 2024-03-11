@@ -1,7 +1,10 @@
 package edu.gatech.seclass.jobcompare6300.dao;
 
 import androidx.lifecycle.LiveData;
+
 import androidx.room.*;
+
+
 
 import java.util.List;
 
@@ -19,5 +22,5 @@ public interface CurrentJobDao {
     void delete(CurrentJob currentJob);
 
     @Query("SELECT * FROM currentjob LIMIT 1")
-    CurrentJob getCurrentJob();
+    LiveData<CurrentJob> getCurrentJob();
 }

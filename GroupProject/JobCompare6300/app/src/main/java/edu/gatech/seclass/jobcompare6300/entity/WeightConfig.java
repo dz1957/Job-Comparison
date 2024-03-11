@@ -35,5 +35,55 @@ public class WeightConfig {
     @ColumnInfo(name = "monthly_internet_stipend_weight")
     public int monthlyInternetStipendWeight;
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Integer getSalaryWeight() {
+        return yearlySalaryWeight;
+    }
+
+    public void setSalaryWeight(int yearlySalaryWeight) {
+        this.yearlySalaryWeight = yearlySalaryWeight;
+    }
+    public Integer getBonusWeight() {
+        return yearlyBonusWeight;
+    }
+
+    public void setBonusWeight(int yearlyBonusWeight) {
+        this.yearlyBonusWeight = yearlyBonusWeight;
+    }
+    public Integer getStockWeight() {
+        return numberOfStockWeight;
+    }
+
+    public void setStockWeight(int numberOfStockWeight) {
+        this.numberOfStockWeight = numberOfStockWeight;
+    }
+    public Integer getFundWeight() {
+        return homeBuyingFundWeight;
+    }
+
+    public void setFundWeight(int homeBuyingFundWeight) {
+        this.homeBuyingFundWeight = homeBuyingFundWeight;
+    }
+    public Integer getHolidaysWeight() {
+        return personalChoiceHolidaysWeight;
+    }
+
+    public void setHolidaysWeight(int personalChoiceHolidaysWeight) {
+        this.personalChoiceHolidaysWeight = personalChoiceHolidaysWeight;
+    }
+
+    public Integer getStipendWeight() {
+        return monthlyInternetStipendWeight;
+    }
+
+    public void setStipendWeight(int monthlyInternetStipendWeight) {
+        this.monthlyInternetStipendWeight = monthlyInternetStipendWeight;
+    }
 }
