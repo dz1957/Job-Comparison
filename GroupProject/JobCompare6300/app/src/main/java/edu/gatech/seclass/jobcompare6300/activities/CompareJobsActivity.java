@@ -13,21 +13,31 @@ import android.widget.TextView;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import edu.gatech.seclass.jobcompare6300.MainActivity;
 import edu.gatech.seclass.jobcompare6300.R;
 import edu.gatech.seclass.jobcompare6300.activities.job.AbstractJobActivity;
+import edu.gatech.seclass.jobcompare6300.database.AppDatabase;
+import edu.gatech.seclass.jobcompare6300.database.JobRepository;
+import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.Job;
+import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
+import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 
 public class CompareJobsActivity extends AppCompatActivity {
-    private ArrayList<TextView> numTextArray;
-    private ArrayList<TextView> titleCompanyTextArray;
-    private ArrayList<CheckBox> checkboxArray;
-    private ArrayList<Job> jobArray;
+    private ArrayList<TextView> numTextArray = new ArrayList<>();
+    private ArrayList<TextView> titleCompanyTextArray = new ArrayList<>();
+    private ArrayList<CheckBox> checkboxArray = new ArrayList<>();
+    private ArrayList<Job> jobArray = new ArrayList<>();
     public static Job job1;
     public static Job job2;
     private boolean compareValid = false;
     private Button Compare;
+
+    AppDatabase appDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +74,38 @@ public class CompareJobsActivity extends AppCompatActivity {
         checkboxArray.add(findViewById(R.id.comp_box10));
         Compare = findViewById(R.id.compare_compare);
         Compare.setBackgroundColor(Color.GRAY);
+
+        appDatabase = AppDatabase.getInstance(this.getApplication());
+
+        JobRepository jobRepository = JobRepository.getInstance(this.getApplication());
+        var context = this;
+        jobRepository.getCurrentJob().observe(context, currentJob -> {
+            jobRepository.getJobOfferList().observe(context, jobOffers -> {
+                appDatabase.getWeightConfigDao().get().observe(context, weightConfig -> {
+                    if(currentJob != null) {
+                        jobArray.add(currentJob);
+                    }
+
+                    if(jobOffers != null){
+                        jobArray.addAll(jobOffers);
+                    }
+
+                    jobArray.sort((j1, j2) -> (int) (j1.getJobOfferScore(weightConfig) - j2.getJobOfferScore(weightConfig)));
+                    Collections.reverse(jobArray);
+
+                    for(int i = 0; i < jobArray.size(); i++) {
+                        String text = jobArray.get(i).getTitle() + ", " + jobArray.get(i).getCompany();
+
+                        if (jobArray.get(i) == currentJob) {
+                            text += " (Current)";
+                        }
+
+                        titleCompanyTextArray.get(i).setText(text);
+                    }
+                });
+            });
+        });
+
     }
 
     public void onClickCompare(View view) {

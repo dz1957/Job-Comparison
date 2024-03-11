@@ -2,6 +2,7 @@ package edu.gatech.seclass.jobcompare6300.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -173,5 +174,32 @@ public abstract class Job {
                 ", personalChoiceHolidays=" + personalChoiceHolidays +
                 ", monthlyInternetStipend=" + monthlyInternetStipend +
                 '}';
+    }
+
+    public float getJobOfferScore(WeightConfig weightConfig){
+        //AYS + AYB + (CSO/3) + HBP + (PCH * AYS / 260) + (MIS*12)
+        if(weightConfig == null){
+            weightConfig = new WeightConfig(1,1,1,1,1,1,1);
+        }
+
+        float AYS = this.yearlySalary / this.costOfLivingIndex;
+        float PCH = this.personalChoiceHolidays * (AYS / 260);
+        AYS *= weightConfig.getSalaryWeight();
+        PCH *= weightConfig.getHolidaysWeight();
+
+        float AYB = this.yearlyBonus/ this.costOfLivingIndex;
+        AYB *= weightConfig.getBonusWeight();
+
+        float CSO = (float) this.numberOfStock / 3;
+        CSO *= weightConfig.getStockWeight();
+
+        float HBP = this.homeBuyingFund;
+        HBP *= weightConfig.getFundWeight();
+
+        float MIS = this.monthlyInternetStipend * 12;
+        MIS *= weightConfig.getStipendWeight();
+
+        float score = AYS + AYB + CSO + HBP + PCH + MIS;
+        return score/weightConfig.getTotalWeight();
     }
 }
