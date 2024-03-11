@@ -49,7 +49,14 @@ public class CurrentJobActivity extends AbstractJobActivity {
         if (isValidInternetStipend && isValidPersonalHoliday && isValidHomeBuyingFund) {
             //Store in database
             getCurrentJobFromWidgets();
-            currentJobRepository.insertCurrentJob(currentJob);
+            currentJobRepository.getCurrentJobCount().observe(this, count -> {
+                if (count == 0) {
+                    currentJobRepository.insertCurrentJob(currentJob);
+                } else {
+                    currentJobRepository.updateCurrentJob(currentJob);
+                }
+            });
+
             navigateToMainActivity(true);
         }
 
