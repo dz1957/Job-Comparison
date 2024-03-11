@@ -1,15 +1,19 @@
 package edu.gatech.seclass.jobcompare6300.activities.job;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import edu.gatech.seclass.jobcompare6300.R;
 import edu.gatech.seclass.jobcompare6300.database.JobRepository;
+import edu.gatech.seclass.jobcompare6300.entity.CurrentJob;
 import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 
 public class JobOfferActivity extends AbstractJobActivity {
@@ -21,7 +25,28 @@ public class JobOfferActivity extends AbstractJobActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_offer);
         initializeAndLoadWidgets();
+
         jobRepository = JobRepository.getInstance(this.getApplication());
+
+//        jobRepository.getJobOfferList().observe(this, jobOffers -> {
+//            if (jobOffers != null && !jobOffers.isEmpty()) {
+//                JobOffer firstJobOffer = jobOffers.get(0);
+//                jobRepository.deleteJobOffer(firstJobOffer);
+//            } else {
+//                Log.i("JobOfferActivity", "JobOffers list is empty");
+//            }
+//
+//        });
+//        jobRepository.getCurrentJob().observe(this, currentJob -> {
+//            if (currentJob != null) {
+//                CurrentJob currentJob1 = currentJob;
+//                jobRepository.deleteCurrentJob(currentJob1);
+//            } else {
+//                Log.i("CurrentJobActivity", "CurrentJob is null");
+//            }
+//
+//        });
+
     }
 
     public void onClickOk(View view) {
