@@ -23,4 +23,8 @@ public interface CurrentJobDao {
 
     @Query("SELECT * FROM currentjob LIMIT 1")
     LiveData<CurrentJob> getCurrentJob();
+
+    @Query("SELECT COUNT(id) FROM CurrentJob")
+    LiveData<Integer> getRowCount();
+
 }

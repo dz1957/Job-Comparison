@@ -1,7 +1,8 @@
 package edu.gatech.seclass.jobcompare6300;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.lifecycle.MediatorLiveData;
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -10,6 +11,9 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import edu.gatech.seclass.jobcompare6300.activities.CompareJobsActivity;
 import edu.gatech.seclass.jobcompare6300.activities.ComparisonWeightsActivity;
@@ -26,16 +30,42 @@ import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 public class MainActivity extends AppCompatActivity {
 
     private CurrentJob currentJob;
+    protected Button compareJobsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        compareJobsButton = findViewById(R.id.menu_compare_jobs);
 
-        JobRepository currentJobRepository = new JobRepository(this.getApplication());
-        currentJobRepository.getCurrentJob().observe(this, job -> currentJob = job);
+        JobRepository jobRepository = JobRepository.getInstance(this.getApplication());
+        var context = this;
+        jobRepository.getCurrentJobCount().observe(context, currentJobCount -> {
+            jobRepository.getJobOfferCount().observe(context, jobOfferCount -> {
+                Log.i(this.getClass().getName(), "Current Job count: " + currentJobCount);
+                Log.i(this.getClass().getName(), "Job Offer count: " + jobOfferCount);
 
+                disableCompareJobsIfNeeded(currentJobCount, jobOfferCount);
+            });
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent intent = getIntent();
+
+        if (intent.hasExtra("job_entry_success") && intent.getBooleanExtra("job_entry_success", false)) {
+            Toast.makeText(this, "Successfully created job entry.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void disableCompareJobsIfNeeded(Integer currentJobCount, Integer jobOfferCount) {
+        boolean enableButton = jobOfferCount > 1 || jobOfferCount == 1 && currentJobCount >= 1;
+        compareJobsButton.setEnabled(enableButton);
     }
 
     public void currentJobButton(View view) {

@@ -30,7 +30,7 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
 
     public abstract void onClickOk(View view) throws ExecutionException, InterruptedException;
     public void onClickCancel(View view) {
-        navigateToMainActivity();
+        navigateToMainActivity(false);
     }
     protected void getJobFromWidgets(Job job) {
         job.setTitle(jobTitleWidget.getText().toString());
@@ -61,8 +61,12 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
         internetStipendWidget.setText(Float.toString(job.getMonthlyInternetStipend()));
     }
 
-    protected void navigateToMainActivity() {
+    protected void navigateToMainActivity(boolean showSuccessToast) {
         Intent mainActivity = new Intent(this, MainActivity.class);
+
+        if (showSuccessToast) {
+            mainActivity.putExtra("job_entry_success", true);
+        }
         startActivity(mainActivity);
     }
 
