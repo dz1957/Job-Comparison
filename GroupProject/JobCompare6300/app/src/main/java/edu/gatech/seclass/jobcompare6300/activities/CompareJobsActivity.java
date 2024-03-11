@@ -27,6 +27,7 @@ import edu.gatech.seclass.jobcompare6300.entity.JobOffer;
 import edu.gatech.seclass.jobcompare6300.entity.WeightConfig;
 
 public class CompareJobsActivity extends AppCompatActivity {
+
     private ArrayList<TextView> numTextArray = new ArrayList<>();
     private ArrayList<TextView> titleCompanyTextArray = new ArrayList<>();
     private ArrayList<CheckBox> checkboxArray = new ArrayList<>();
@@ -35,6 +36,7 @@ public class CompareJobsActivity extends AppCompatActivity {
     public static Job job2;
     private boolean compareValid = false;
     private Button Compare;
+
 
     AppDatabase appDatabase;
 
