@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -22,6 +23,7 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
     protected EditText weightHolidays;
     protected EditText weightInternetStipend;
     AppDatabase appDatabase;
+    WeightConfig existingWeightConfig;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,29 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
         weightHolidays = (EditText) findViewById(R.id.weight_holidays);
         weightInternetStipend = (EditText) findViewById(R.id.weight_internetstipend);
 
+        appDatabase = AppDatabase.getInstance(this.getApplication());
+
+        appDatabase.getWeightConfigDao().get().observe(this, config -> {
+            existingWeightConfig = config;
+            if (existingWeightConfig != null) {
+                // If weights exist in the database, set EditText values accordingly
+                weightSalary.setText(String.valueOf(existingWeightConfig.getSalaryWeight()));
+                weightBonus.setText(String.valueOf(existingWeightConfig.getBonusWeight()));
+                weightStocks.setText(String.valueOf(existingWeightConfig.getStockWeight()));
+                weightHomeFund.setText(String.valueOf(existingWeightConfig.getFundWeight()));
+                weightHolidays.setText(String.valueOf(existingWeightConfig.getHolidaysWeight()));
+                weightInternetStipend.setText(String.valueOf(existingWeightConfig.getStipendWeight()));
+            } else {
+                // If no weights exist in the database, set default values of 1
+                weightSalary.setText("1");
+                weightBonus.setText("1");
+                weightStocks.setText("1");
+                weightHomeFund.setText("1");
+                weightHolidays.setText("1");
+                weightInternetStipend.setText("1");
+            }
+        });
+
     }
 
     public void onClickOk(View view) {
@@ -42,6 +67,7 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
         if (isAnyWeightEmpty()) {
             setDefaultWeights();
         }
+
         // Get the values from the EditText fields
         int salaryWeight = getWeightValue(weightSalary);
         int bonusWeight = getWeightValue(weightBonus);
@@ -49,9 +75,17 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
         int homeFundWeight = getWeightValue(weightHomeFund);
         int holidaysWeight = getWeightValue(weightHolidays);
         int internetStipendWeight = getWeightValue(weightInternetStipend);
+
+        if (salaryWeight == -1 || bonusWeight == -1 || stocksWeight == -1 ||
+                homeFundWeight == -1 || holidaysWeight == -1 || internetStipendWeight == -1) {
+            // If any of the weights is not a valid integer, pause at the layout
+            return;
+        }
+
         updateWeightsInDatabase(salaryWeight, bonusWeight, stocksWeight,
                 homeFundWeight, holidaysWeight, internetStipendWeight);
 
+        navigateToMainActivity();
     }
 
     public void onClickCancel(View view) {
@@ -93,15 +127,23 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
     }
 
     private int getWeightValue(EditText editText) {
-        String valueString = editText.getText().toString();
+        String valueString = editText.getText().toString().trim();
         if (valueString.isEmpty()) {
             return 1;
         } else {
             try {
-                return Integer.parseInt(valueString);
+                int parsedValue = Integer.parseInt(valueString);
+
+                // Check if the parsed value is positive
+                if (parsedValue > 0) {
+                    return parsedValue;
+                } else {
+                    editText.setError("Invalid Entry Text: Must be a positive Integer");
+                    return -1; // Return -1 indicates an error
+                }
             } catch (NumberFormatException e) {
-                // Handle the case when the input cannot be parsed as a double
-                return 1; // Return a default value in case of an error
+                editText.setError("Invalid Entry Text: Must be Integer");
+                return -1; // Return -1 indicates an error
             }
         }
     }
@@ -110,9 +152,8 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
                                          int stocksWeight, int homeFundWeight,
                                          int holidaysWeight, int internetStipendWeight) {
         // Use the WeightConfigDao to update the weights in the database
-        AppDatabase.databaseWriteExecutor.execute(() -> {
-            WeightConfig existingWeightConfig = appDatabase.getWeightConfigDao().get();
-
+        appDatabase.getWeightConfigDao().get().observe(this, config -> {
+            existingWeightConfig = config;
             if (existingWeightConfig != null) {
                 existingWeightConfig.setSalaryWeight(salaryWeight);
                 existingWeightConfig.setBonusWeight(bonusWeight);
@@ -121,15 +162,21 @@ public class ComparisonWeightsActivity extends AppCompatActivity {
                 existingWeightConfig.setHolidaysWeight(holidaysWeight);
                 existingWeightConfig.setStipendWeight(internetStipendWeight);
 
-                appDatabase.getWeightConfigDao().update(existingWeightConfig);
-            } else {
+                AppDatabase.databaseWriteExecutor.execute(() -> {
+                    appDatabase.getWeightConfigDao().update(existingWeightConfig);
+
+                });
+            }
+            else {
                 WeightConfig newWeightConfig = new WeightConfig(1,1,1,1,1,1,1);
                 newWeightConfig.setSalaryWeight(salaryWeight);
                 newWeightConfig.setBonusWeight(bonusWeight);
-
-                appDatabase.getWeightConfigDao().insert(newWeightConfig);
+                AppDatabase.databaseWriteExecutor.execute(() -> {
+                    appDatabase.getWeightConfigDao().insert(newWeightConfig);
+                });
             }
         });
+
     }
 
 }
