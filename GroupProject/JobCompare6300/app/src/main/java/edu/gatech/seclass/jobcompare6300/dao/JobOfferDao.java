@@ -1,5 +1,6 @@
 package edu.gatech.seclass.jobcompare6300.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.*;
 
 import java.util.List;
@@ -18,5 +19,5 @@ public interface JobOfferDao {
     void delete(JobOffer jobOffer);
 
     @Query("SELECT * FROM joboffer LIMIT 10")
-    List<JobOffer> getAll();
+    LiveData<List<JobOffer>> getAll();
 }

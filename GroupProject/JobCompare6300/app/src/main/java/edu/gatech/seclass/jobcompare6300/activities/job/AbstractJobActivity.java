@@ -61,20 +61,6 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
         internetStipendWidget.setText(Float.toString(job.getMonthlyInternetStipend()));
     }
 
-    protected void initializeAndLoadWidgets() {
-        jobTitleWidget = (EditText) findViewById(R.id.current_jobtitle);
-        companyWidget = (EditText) findViewById(R.id.current_company);
-        cityWidget = (EditText) findViewById(R.id.current_city);
-        stateWidget = (EditText) findViewById(R.id.current_state);
-        costOfLivingWidget = (EditText) findViewById(R.id.current_col_index);
-        salaryWidget = (EditText) findViewById(R.id.current_salary);
-        bonusWidget = (EditText) findViewById(R.id.current_bonus);
-        numberOfStocksWidget = (EditText) findViewById(R.id.current_stocks);
-        homeBuyingFundWidget = (EditText) findViewById(R.id.current_homefund);
-        personalHolidaysWidget = (EditText) findViewById(R.id.current_holidays);
-        internetStipendWidget = (EditText) findViewById(R.id.current_internetstipend);
-    }
-
     protected void navigateToMainActivity() {
         Intent mainActivity = new Intent(this, MainActivity.class);
         startActivity(mainActivity);
@@ -102,10 +88,10 @@ public abstract class AbstractJobActivity extends AppCompatActivity {
     }
 
     protected boolean isValidHomeBuyingFund() {
-        boolean isValidHomeBuyingFund = InputValidationUtility.validateHomeBuyingFund(salaryWidget.getText().toString(), personalHolidaysWidget.getText().toString());
+        boolean isValidHomeBuyingFund = InputValidationUtility.validateHomeBuyingFund(salaryWidget.getText().toString(), homeBuyingFundWidget.getText().toString());
 
         if (!isValidHomeBuyingFund) {
-            personalHolidaysWidget.setError("Value should be less than 15% of yearly salary.");
+            homeBuyingFundWidget.setError("Value should be less than 15% of yearly salary.");
         }
 
         return isValidHomeBuyingFund;
